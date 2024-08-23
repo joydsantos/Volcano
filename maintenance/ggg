@@ -1,0 +1,24 @@
+<div class="col-md-3 align-self-center">
+    <select name="inventory_type" class="form-select" onchange="filter.submit()">
+        <option value="" selected disabled>--Select Item Type--</option>
+        <option value="">All</option>
+        <?php
+        $selectedType = isset($_POST['inventory_type']) ? $_POST['inventory_type'] :  null;
+        foreach ($all_types as $type_id) {
+            echo '<option value="' . $type_id['id'] . '" ' . ($type_id['id'] == $selectedType ? 'selected' : '') . ' >' . $type_id['name'] . '</option>';
+        } ?>
+    </select>
+</div>
+<div class="col-md-3 align-self-center">
+    <select name="acquisition_year" class="form-select" onchange="filter.submit()">
+        <option value="" selected disabled>--Select Acquisition Year--</option>
+        <option value="">All</option>
+        <?php
+        $selectedYear = isset($_POST['acquisition_year']) ? $_POST['acquisition_year'] :  null;
+        $result = mysqli_query($conn, "SELECT DISTINCT year(acquisition_year) as year FROM `tbl_inventory`");
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<option value="' . $row['year'] . '" ' . ($row['year'] == $selectedYear ? 'selected' : '') . ' >' . $row['year'] . '</option>';
+        }
+        ?>
+    </select>
+</div>

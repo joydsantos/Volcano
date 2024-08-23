@@ -1,0 +1,12 @@
+-- Assuming the table name is "Transactions"
+INSERT INTO Transactions (transaction_Number)
+SELECT CONCAT('VMEPD-', DATE_FORMAT(NOW(), '%Y%m%d'), '-', LPAD(id, 4, '0'))
+FROM YourTableName; -- Replace "YourTableName" with the actual name of the table containing the "id" column.
+
+
+UPDATE tbl_oldtransaction
+JOIN (
+  SELECT id, CONCAT('VMEPD-', DATE_FORMAT(NOW(), '%Y%m%d'), '-', LPAD(id, 4, '0')) AS new_transaction_Number
+  FROM tbl_oldtransaction
+) AS subquery ON tbl_oldtransaction.id = subquery.id
+SET tbl_oldtransaction.transaction_Number = subquery.new_transaction_Number;

@@ -1,0 +1,72 @@
+
+ .btn-update
+{
+  background-color: #FFB300;
+  border: none;
+  color: white;
+  padding: 6px 13px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-left: 7px;
+  cursor: pointer;
+}
+
+.btnNew, .btnUpdateAccountPassword, .btnUpdateAccount 
+{
+  background-color:#017469;
+  border: none;
+  color: white;
+  padding: 6px 13px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btnAdmin
+{
+  background-color:#017469;
+  border: none;
+  color: white;
+  padding: 6px 13px;
+  font-size: 16px;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+.btnclosetutormodal
+{
+  background-color:#FFC107;
+  border: none;
+  color: white;
+  padding: 6px 13px;
+  font-size: 16px;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.btn-update:hover,.btn-password:hover, a.btnNew:hover,.btnclosetutormodal:hover, .btnAdmin:hover
+{
+  color: white; background-color: #3D4A50; text-decoration: none;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+     border-style: none; 
+    border-width: 0;
+
+}
+table.dataTable {
+    clear: both;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    max-width: none !important;
+   
+}
+
+table.dataTable thead tr {
+  background-color:#042123;
+}
+  .row,.form-control, .form-select, .custom-select
+  {
+    box-shadow: none !important;
+   }
